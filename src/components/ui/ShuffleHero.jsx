@@ -5,59 +5,59 @@ import { cn } from "../../lib/utils";
 const squareData = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/736x/ab/9a/6f/ab9a6f5aca7ee4b8a9295d988dcfa8ec.jpg",
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/1200x/0a/23/d8/0a23d8d2a2127949bc73d6ac97d690fc.jpg",
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/736x/38/a1/ca/38a1cad9ae4dc582f0d491e19826aee1.jpg",
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/736x/b6/81/e5/b681e59857c32b045d4222afd06a2886.jpg",
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/1200x/54/d1/f1/54d1f153037e28aa467fe04166166459.jpg",
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1510531704581-5b2870972060?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/736x/41/01/4c/41014c4b7e70a9cd7e7ac6000cf870d9.jpg",
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/1200x/b0/c9/32/b0c932f82dc644c2590bb2f89162f363.jpg",
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/736x/36/66/eb/3666eba986cabef1dfc976b4d8d3bc9c.jpg",
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/736x/8a/24/7b/8a247b63fbfeffaf105821fc1388a87b.jpg",
   },
   {
     id: 10,
-    src: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/736x/2b/33/08/2b3308e145e088167f2633865f694a6b.jpg",
   },
   {
     id: 11,
-    src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/736x/53/ac/93/53ac93600a99cee6760a7610173367f4.jpg",
   },
   {
     id: 12,
-    src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/736x/68/ca/5c/68ca5c88bc164f2fc79aa3eab3871849.jpg",
   },
   {
     id: 13,
-    src: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/736x/58/02/78/580278b4feb17dc409569c6db27fb643.jpg",
   },
   {
     id: 14,
-    src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/736x/16/4c/f7/164cf7da7a066d6b879c7b80aa509044.jpg",
   },
   {
     id: 15,
@@ -65,7 +65,7 @@ const squareData = [
   },
   {
     id: 16,
-    src: "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?q=80&w=500&auto=format&fit=crop",
+    src: "https://i.pinimg.com/1200x/d1/78/b6/d178b6679c6dc29bd61d4ec0a4a9cc94.jpg",
   },
 ];
 
@@ -131,23 +131,13 @@ const ShuffleGrid = () => {
 export const ShuffleHero = () => {
   return (
     <section className="w-full relative px-8 py-12 overflow-hidden bg-slate-900/40 backdrop-blur-sm border-y border-white/5">
-      {/* Indian Flag Theme Background - intensified */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FF9933]/20 via-transparent to-[#138808]/20 pointer-events-none z-0"></div>
-
-      {/* Decorative Blur Circles - heightened opacity */}
-      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-[#FF9933]/30 rounded-full blur-[100px] pointer-events-none mix-blend-screen"></div>
-      <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-[#138808]/30 rounded-full blur-[100px] pointer-events-none mix-blend-screen"></div>
-
-      {/* Center White Light for the Chakra effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-[120px] pointer-events-none"></div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto dark:text-white relative z-10">
         <div>
           <span className="block mb-4 text-xs md:text-sm text-orange-500 font-bold tracking-widest uppercase">
-            Smart & Synchronized
+           Connecting Education, Building Futures
           </span>
           <h3 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
-            Orchestrate Your School's Rhythm
+            From Morning Bell to Home Bell
           </h3>
           <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
             Say goodbye to manual ringing and confusing schedules. Our automated

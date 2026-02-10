@@ -13,7 +13,10 @@ export default function Hero() {
 
   if (theme === "light") {
     return (
-      <section className="relative min-h-screen flex items-center justify-center pt-20">
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center justify-center pt-20"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -55,7 +58,10 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#020617] flex items-center justify-center">
+    <section
+      id="home"
+      className="relative min-h-screen overflow-hidden bg-[#020617] flex items-center justify-center"
+    >
       {/* Geometric Pattern Background */}
       <div
         className="absolute inset-0 opacity-[0.03] z-0 pointer-events-none"

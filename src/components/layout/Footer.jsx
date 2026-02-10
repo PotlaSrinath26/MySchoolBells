@@ -41,7 +41,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-base leading-relaxed mb-10 text-slate-600 dark:text-slate-400 max-w-xs font-light transition-colors">
-             MySchoolBells brings all school activities onto a single, secure, and easy-to-use digital platform.
+              MySchoolBells brings all school activities onto a single, secure,
+              and easy-to-use digital platform.
             </p>
             {/* <div className="flex gap-4">
               {[1, 2, 3].map((i) => (

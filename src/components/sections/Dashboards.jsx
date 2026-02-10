@@ -18,7 +18,7 @@ export default function Dashboards() {
   return (
     <Section
       id="intelligence"
-      className="bg-transparent dark:bg-[#020617] py-24 lg:py-48 relative overflow-hidden transition-colors duration-500"
+      className="bg-transparent dark:bg-[#020617] py-10 lg:py-24 relative overflow-hidden transition-colors duration-500"
     >
       {/* Hyper-Aesthetic Background Layers */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -119,10 +119,10 @@ export default function Dashboards() {
                     Intelligence OS v4.0
                   </span>
                 </div>
-                <div className="px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-[9px] font-black uppercase tracking-widest flex items-center gap-2 border border-indigo-500/20 text-shadow-glow">
+                {/* <div className="px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-[9px] font-black uppercase tracking-widest flex items-center gap-2 border border-indigo-500/20 text-shadow-glow">
                   <span className="w-1 h-1 rounded-full bg-indigo-500 animate-ping"></span>
                   Proprietary Analytics
-                </div>
+                </div> */}
               </div>
 
               {/* Persona Contexts */}
@@ -209,24 +209,26 @@ export default function Dashboards() {
                         </div>
                       </div>
                     </div>
-                    <div className="space-y-8 mt-4">
+                    <div className="space-y-4 mt-4">
                       {[
-                        { name: "Pure Mathematics", p: 96, c: "indigo" },
-                        { name: "Quantum Physics", p: 88, c: "violet" },
-                        { name: "Data Ethics", p: 92, c: "rose" },
+                        { name: "Mathematics", p: 96, c: "indigo" },
+                        { name: "Physics", p: 88, c: "indigo" },
+                        { name: "Chemistry", p: 92, c: "indigo" },
                       ].map((s, i) => (
-                        <div key={i} className="space-y-4">
+                        <div key={i} className="space-y-2">
                           <div className="flex justify-between items-center px-1">
-                            <span className="text-[12px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">
+                            <span className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">
                               {s.name}
                             </span>
-                            <span className="text-sm font-black text-indigo-600">
-                              {s.p}% Mastery
+                            <span
+                              className={`text-sm font-black text-${s.c}-600 dark:text-${s.c}-400`}
+                            >
+                              {s.p}%
                             </span>
                           </div>
                           <div className="h-3 bg-slate-100 dark:bg-white/5 rounded-full overflow-hidden p-[2px]">
                             <div
-                              className="h-full bg-indigo-500 rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)] transition-all duration-1000"
+                              className={`h-full bg-${s.c}-500 rounded-full shadow-[0_0_10px] shadow-${s.c}-500/50 transition-all duration-1000`}
                               style={{ width: `${s.p}%` }}
                             ></div>
                           </div>
@@ -262,8 +264,8 @@ export default function Dashboards() {
                 )}
 
                 {activeTab === "parent" && (
-                  <div className="h-full flex flex-col gap-10">
-                    <div className="flex items-center gap-8">
+                  <div className="h-full flex flex-col gap-2">
+                    <div className="flex items-center gap-4">
                       <div className="relative">
                         <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-rose-500 via-indigo-500 to-emerald-500 p-[2px] animate-spin-slow">
                           <div className="w-full h-full rounded-full bg-[#070b14]"></div>
@@ -287,14 +289,14 @@ export default function Dashboards() {
                         </h4>
                         <div className="inline-flex items-center gap-2 px-3 py-1 bg-rose-500/10 border border-rose-500/20 rounded-full">
                           <span className="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
-                          <span className="text-[10px] font-black text-rose-500 uppercase tracking-widest">
+                          <span className="text-[8px] font-black text-rose-500 uppercase tracking-widest">
                             Academic Excellence Tier 1
                           </span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-8 flex-grow">
+                    <div className="grid grid-cols-2 gap-4 flex-grow">
                       <div className="bg-slate-50 dark:bg-white/5 rounded-[2.5rem] p-10 flex flex-col items-center justify-center border border-slate-200/50 dark:border-white/5 relative overflow-hidden group/radar shadow-inner">
                         <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/[0.02] to-transparent"></div>
                         <div className="relative w-40 h-40 flex items-center justify-center">
@@ -321,10 +323,10 @@ export default function Dashboards() {
                           Cognitive Spectrum
                         </p>
                       </div>
-                      <div className="space-y-4 pt-2">
+                      <div className="space-y-1 pt-2">
                         {[
                           {
-                            e: "Advanced Mathematics",
+                            e: "Mathematics",
                             r: "Score: 98/100",
                             t: "2m",
                             g: "bg-emerald-500",
@@ -335,16 +337,16 @@ export default function Dashboards() {
                             t: "1h",
                             g: "bg-indigo-500",
                           },
-                          {
-                            e: "Sports Merit Badge",
-                            r: "Tag: Gold",
-                            t: "3h",
-                            g: "bg-rose-500",
-                          },
+                          // {
+                          //   e: "Sports Merit Badge",
+                          //   r: "Tag: Gold",
+                          //   t: "3h",
+                          //   g: "bg-rose-500",
+                          // },
                         ].map((item, idx) => (
                           <div
                             key={idx}
-                            className="p-5 rounded-2xl bg-white dark:bg-white/5 border border-slate-200/50 dark:border-white/10 flex items-center justify-between hover:scale-[1.02] transition-all duration-300 shadow-sm hover:shadow-md"
+                            className="p-3 rounded-2xl bg-white dark:bg-white/5 border border-slate-200/50 dark:border-white/10 flex items-center justify-between hover:scale-[1.02] transition-all duration-300 shadow-sm hover:shadow-md"
                           >
                             <div className="flex gap-4 items-center">
                               <div

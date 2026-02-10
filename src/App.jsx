@@ -14,12 +14,16 @@ import WhyChoose from "./components/sections/WhyChoose";
 import SchoolItems from "./components/sections/SchoolItems";
 import About from "./components/sections/About";
 import ModuleDetail from "./components/pages/ModuleDetail";
+import ERPLogin from "./components/pages/ERPLogin";
+import ERPDashboard from "./components/pages/ERPDashboard";
+import UserRegistration from "./components/pages/UserRegistration";
+import { Demo } from "./components/pages/SignIn2Demo";
 import { useTheme } from "./lib/ThemeContext";
-import { BackgroundGradientAnimation } from "./components/ui/background-gradient-animation";
 import NeonFlowSection from "./components/sections/NeonFlowSection";
 import Dashboards from "./components/sections/Dashboards";
 import { GlowingEffectDemo } from "./components/sections/GlowingEffectDemo";
 import { ThemeProvider } from "./lib/ThemeContext";
+import { AuthProvider } from "./lib/AuthContext";
 import FloatingAssistant from "./components/FloatingAssistant";
 import { AuroraBackgroundDemo } from "./components/sections/AuroraBackgroundDemo";
 import { ShuffleHero } from "./components/ui/ShuffleHero";
@@ -61,7 +65,9 @@ function HomePage() {
 export default function App() {
   return (
     <ThemeProvider>
-      <AppContent />
+      <AuthProvider>
+        <AppContent />
+      </AuthProvider>
     </ThemeProvider>
   );
 }
@@ -83,6 +89,13 @@ function AppContent() {
             <Route path="/modules/:id" element={<ModuleDetail />} />
             <Route path="/glowing-demo" element={<GlowingEffectDemo />} />
             <Route path="/aurora-demo" element={<AuroraBackgroundDemo />} />
+            <Route path="/erp/login" element={<ERPLogin />} />
+            <Route path="/erp/dashboard" element={<ERPDashboard />} />
+            <Route
+              path="/erp/admin/user-registration"
+              element={<UserRegistration />}
+            />
+            <Route path="/signin-demo" element={<Demo />} />
           </Routes>
         </main>
 

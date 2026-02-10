@@ -3,10 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "../ui/Button";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useTheme } from "../../lib/ThemeContext";
-import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
+import { useAuth } from "../../lib/AuthContext";
+import { SunIcon, MoonIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
+  const { user } = useAuth();
   const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,11 +20,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: "Home", href: "/#home", type: "anchor" },
     { name: "About", href: "/#about", type: "anchor" },
-    { name: "Operations", href: "/#impact", type: "anchor" },
-    { name: "Ecosystem", href: "/#school-items", type: "anchor" },
-    { name: "Analytics", href: "/#intelligence", type: "anchor" },
-    { name: "Advantage", href: "/#why-choose", type: "anchor" },
+    { name: "Features", href: "/#features", type: "anchor" },
+    { name: "Why Choose Us", href: "/#why-choose", type: "anchor" },
     { name: "Modules", href: "/modules", type: "link" },
   ];
 
@@ -62,8 +63,8 @@ export default function Navbar() {
             >
               MY SCHOOL BELLS
             </span>
-            <span className="text-[11px] font-bold text-orange-500 uppercase tracking-[0.3em] leading-tight transition-colors duration-500">
-             BELL-BELL MANAGE ALL
+            <span className="text-[8px] font-bold text-orange-500 uppercase tracking-[0.3em] leading-tight transition-colors duration-500">
+              BELL-BELL MANAGE IT ALL
             </span>
           </div>
         </Link>
@@ -121,15 +122,17 @@ export default function Navbar() {
             )}
           </button>
 
-          <a href={getHref("/#why-choose")}>
+          <Link to={user ? "/erp/dashboard" : "/erp/login"}>
             <Button
               variant={theme === "dark" ? "white" : "primary"}
               className="py-3.5 px-10 shadow-2xl transition-all text-[11px] font-black uppercase tracking-[0.2em] border-none group relative overflow-hidden ring-1 ring-white/10"
             >
-              <span className="relative z-10">Get Started</span>
+              <span className="relative z-10">
+                {user ? "Dashboard" : "ERP Login"}
+              </span>
               <div className="absolute inset-0 bg-gradient-to-r from-rose-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </Button>
-          </a>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button
@@ -179,17 +182,17 @@ export default function Navbar() {
               ),
             )}
             <div className="mt-12 px-6">
-              <a
-                href={getHref("/#why-choose")}
+              <Link
+                to={user ? "/erp/dashboard" : "/erp/login"}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <Button
                   variant={theme === "dark" ? "white" : "primary"}
                   className="w-full py-7 rounded-[2.5rem] font-black uppercase tracking-widest text-lg border-none shadow-2xl"
                 >
-                  Book Your Demo
+                  {user ? "Go to Dashboard" : "ERP Login Portal"}
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

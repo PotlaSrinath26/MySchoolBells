@@ -15,7 +15,7 @@ export default function About() {
   return (
     <Section
       id="about"
-      className="bg-transparent dark:bg-[#020617] py-32 relative overflow-hidden transition-colors duration-500"
+      className="bg-transparent dark:bg-[#020617] py-10 relative overflow-hidden transition-colors duration-500"
     >
       {/* Background Decorative Blur */}
       <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-indigo-500/5 blur-[150px] rounded-full pointer-events-none -translate-y-1/2"></div>
@@ -25,7 +25,7 @@ export default function About() {
           {/* Left Content */}
           <FadeIn>
             <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-8 tracking-tight leading-tight transition-colors">
-             Step-By-Step{" "}
+              Step-By-Step{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-indigo-600 dark:from-rose-400 dark:to-indigo-400">
                 Get the Success.
               </span>
@@ -52,7 +52,7 @@ export default function About() {
               </p> */}
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4 mb-10">
+            <div className="flex flex-col gap-4 mb-10">
               {points.map((point, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0" />
