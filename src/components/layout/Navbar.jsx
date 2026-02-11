@@ -38,23 +38,23 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
+      className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-500 ${
         scrolled
-          ? "bg-white/95 dark:bg-[#020617]/95 backdrop-blur-xl border-b border-slate-200 dark:border-white/10 py-5 shadow-lg shadow-indigo-900/5"
+          ? "bg-white/95 dark:bg-[#020617]/95 backdrop-blur-xl py-5 shadow-lg shadow-indigo-900/5"
           : "bg-transparent py-8"
       }`}
     >
       <div className="max-w-full mx-auto px-6 sm:px-12 lg:px-16 flex items-center justify-between gap-6">
         {/* Logo Section */}
-        <Link to="/" className="group flex items-center gap-4 shrink-0">
-          <div className="relative w-14 h-14 rounded-3xl flex items-center justify-center text-indigo-950 font-serif italic text-3xl group-hover:rotate-12 transition-transform duration-500 shadow-xl shadow-indigo-900/10 overflow-hidden ring-1 ring-slate-100 dark:ring-white/10">
-            <img
-              src="/Images/MySchool/MySchoolBells/Logo.webp"
-              alt="myschool"
-              className="w-12 h-12 object-contain p-1"
-            />
-            <div className="absolute inset-0 bg-rose-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          </div>
+        <Link to="/" className="group flex items-center gap-2 shrink-0">
+          {/* <div className="relative w-14 h-14 rounded-3xl flex items-center justify-center  font-serif italic text-3xl group-hover:rotate-12 transition-transform duration-500 shadow-xl shadow-indigo-900/10 overflow-hidden ring-1 ring-slate-100 dark:ring-white/10"> */}
+          <img
+            src="/Images/MySchool/MySchoolBells/Logo.webp"
+            alt="myschool"
+            className="w-12 h-12 object-contain p-1"
+          />
+          <div className="absolute inset-0  blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          {/* </div> */}
           <div className="flex flex-col">
             <span
               className={`text-2xl font-black tracking-tighter leading-none transition-colors duration-500 ${
@@ -103,29 +103,32 @@ export default function Navbar() {
         </div>
 
         {/* Actions Section */}
-        <div className="flex items-center gap-6 shrink-0">
-          <div className="hidden md:flex h-6 w-px bg-slate-200 dark:bg-white/10 mx-2"></div>
-
+        <div className="flex items-center gap-2 sm:gap-6 shrink-0">
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className={`p-3 rounded-2xl transition-all duration-500 border group ${
+            className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl transition-all duration-500 border group relative overflow-hidden ${
               theme === "dark"
-                ? "bg-white/5 text-yellow-400 hover:bg-white/10 border-white/5"
-                : "bg-slate-100 text-indigo-600 hover:bg-slate-200 border-slate-200 shadow-sm"
+                ? "bg-white/5 text-yellow-400 hover:bg-white/10 border-white/5 shadow-[0_0_20px_rgba(250,204,21,0.2)]"
+                : "bg-white text-indigo-600 hover:bg-slate-50 border-slate-200 shadow-[0_10px_30px_rgba(79,70,229,0.1)]"
             }`}
           >
             {theme === "dark" ? (
-              <SunIcon className="w-5 h-5 transition-transform group-hover:rotate-90 duration-700" />
+              <SunIcon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:rotate-90 duration-700 relative z-10" />
             ) : (
-              <MoonIcon className="w-5 h-5 transition-transform group-hover:-rotate-12 duration-700" />
+              <MoonIcon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:-rotate-12 duration-700 relative z-10" />
             )}
+            <div
+              className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                theme === "dark" ? "bg-yellow-400/10" : "bg-indigo-500/5"
+              }`}
+            ></div>
           </button>
 
           <Link to={user ? "/erp/dashboard" : "/erp/login"}>
             <Button
               variant={theme === "dark" ? "white" : "primary"}
-              className="py-3.5 px-10 shadow-2xl transition-all text-[11px] font-black uppercase tracking-[0.2em] border-none group relative overflow-hidden ring-1 ring-white/10"
+              className="py-2.5 sm:py-3.5 px-4 sm:px-10 shadow-2xl transition-all text-[9px] sm:text-[11px] font-black uppercase tracking-[0.1em] sm:tracking-[0.2em] border-none group relative overflow-hidden ring-1 ring-white/10"
             >
               <span className="relative z-10">
                 {user ? "Dashboard" : "ERP Login"}

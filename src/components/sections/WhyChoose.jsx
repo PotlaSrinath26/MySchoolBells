@@ -37,30 +37,23 @@ export default function WhyChoose() {
   return (
     <Section
       id="why-choose"
-      className="bg-transparent dark:bg-[#020617] py-32 relative overflow-hidden transition-colors duration-500"
-    >
+      className="bg-transparent dark:bg-[#020617] py-32 relative overflow-hidden transition-colors duration-500">
       {/* Dynamic Animated Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-rose-500/10 blur-[150px] rounded-full animate-blob"></div>
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full animate-blob animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-violet-600/5 blur-[180px] rounded-full animate-blob animation-delay-4000"></div>
-
         <div className="absolute inset-0 bg-gradient-to-tr from-slate-50 via-slate-50/90 to-transparent dark:from-[#020617] dark:via-[#020617]/90 dark:to-transparent transition-colors duration-500"></div>
       </div>
-
       <div className="grid lg:grid-cols-2 gap-24 relative z-10 items-start">
         <div>
           <FadeIn>
-            {/* <div className="inline-block px-3 py-1 mb-6 rounded-lg bg-rose-500/10 text-rose-600 dark:text-rose-400 text-[10px] font-bold uppercase tracking-widest border border-rose-500/20 transition-colors">
-              The Edge
-            </div> */}
             <h2 className="text-4xl lg:text-5xl font-bold mb-12 tracking-tight text-slate-900 dark:text-white transition-colors leading-tight">
               Designed for the <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-indigo-600 dark:from-rose-400 dark:to-indigo-400 transition-all">
                 Modern Institution.
               </span>
             </h2>
-
             <div className="space-y-12">
               {reasons.map((reason, i) => (
                 <div key={i} className="group relative pl-16">
@@ -78,7 +71,6 @@ export default function WhyChoose() {
             </div>
           </FadeIn>
         </div>
-
         <div className="relative group lg:sticky lg:top-32">
           <div className="absolute -inset-1 bg-gradient-to-r from-rose-500 to-indigo-500 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
           <div className="relative bg-white/70 dark:bg-indigo-950/40 backdrop-blur-2xl p-10 lg:p-14 rounded-[2.5rem] border border-slate-200 dark:border-white/10 shadow-2xl transition-colors">
@@ -88,7 +80,6 @@ export default function WhyChoose() {
             <p className="text-slate-800 dark:text-slate-400 mb-10 text-center text-sm font-medium transition-colors">
               Schedule a personalized walkthrough with our specialists.
             </p>
-
             <form className="space-y-5">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -123,7 +114,6 @@ export default function WhyChoose() {
                   placeholder="e.g. Saint Peter's Academy"
                 />
               </div>
-
               <div className="space-y-2">
                 <label className="text-[10px] font-bold text-slate-900 dark:text-slate-500 uppercase tracking-widest ml-1 transition-colors">
                   Inquiry Email
@@ -134,7 +124,6 @@ export default function WhyChoose() {
                   placeholder="admin@school.com"
                 />
               </div>
-
               <Button
                 variant={theme === "dark" ? "white" : "primary"}
                 className="w-full py-5 rounded-2xl font-bold uppercase tracking-widest text-xs shadow-xl transition-all border-none group relative overflow-hidden"
@@ -143,7 +132,6 @@ export default function WhyChoose() {
                 <div className="absolute inset-0 bg-gradient-to-r from-rose-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </Button>
             </form>
-
             <div className="mt-12 pt-8 border-t border-slate-200 dark:border-white/5 flex items-center justify-around gap-4 transition-colors">
               <div className="flex flex-col items-center gap-2">
                 <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-600">

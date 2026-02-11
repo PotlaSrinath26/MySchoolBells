@@ -51,17 +51,22 @@
 
 body {
   font-family: "Outfit", sans-serif;
-  @apply bg-[#f8fafc] dark:bg-[#020617] text-slate-900 dark:text-slate-100 overflow-x-hidden relative transition-colors duration-500;
+  @apply text-slate-900 dark:text-slate-100 overflow-x-hidden relative transition-colors duration-500;
+  background-color: #fdfcfb;
 }
 
-/* Base background for light mode */
+.dark body {
+  background-color: #020617;
+}
+
+/* Base background for both themes via pseudo-element */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
-  background-color: #fdfcfb;
-  transition: opacity 0.5s ease;
+  transition: all 0.5s ease;
+  pointer-events: none;
 }
 
 /* Texture overlays for body */
@@ -72,19 +77,17 @@ body::after {
   z-index: -1;
   pointer-events: none;
   background-image: 
-        /* Dot grid */
     radial-gradient(circle, #000 0.5px, transparent 0.5px),
-    /* Noise texture (using a subtle repeating linear gradient to simulate grit if SVG isn't possible) */
     url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   background-size:
     32px 32px,
     200px 200px;
-  opacity: 0.05;
+  opacity: 0.03;
+  transition: opacity 0.5s ease;
 }
 
-/* Base mesh gradient only for dark mode */
+/* Dark mode specific backgrounds */
 .dark body::before {
-  background-color: #020617;
   background-image:
     radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
     radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
@@ -97,7 +100,7 @@ body::after {
 }
 
 .dark body::after {
-  opacity: 0.03;
+  opacity: 0.02;
   filter: invert(1);
 }
 

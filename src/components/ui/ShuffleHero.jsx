@@ -130,11 +130,11 @@ const ShuffleGrid = () => {
 
 export const ShuffleHero = () => {
   return (
-    <section className="w-full relative px-8 py-12 overflow-hidden bg-slate-900/40 backdrop-blur-sm border-y border-white/5">
+    <section className="w-full relative px-8 py-12 overflow-hidden bg-white/40 dark:bg-slate-900/40 backdrop-blur-sm border-y border-slate-200 dark:border-white/5 transition-colors">
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto dark:text-white relative z-10">
         <div>
           <span className="block mb-4 text-xs md:text-sm text-orange-500 font-bold tracking-widest uppercase">
-           Connecting Education, Building Futures
+            Connecting Education, Building Futures
           </span>
           <h3 className="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
             From Morning Bell to Home Bell

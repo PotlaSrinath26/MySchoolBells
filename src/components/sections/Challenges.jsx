@@ -18,12 +18,8 @@ export default function Challenges() {
         <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-rose-500/10 blur-[150px] rounded-full animate-blob animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-violet-600/5 blur-[180px] rounded-full animate-blob animation-delay-4000"></div>
       </div>
-
       <div className="text-center mb-16 relative z-10">
         <FadeIn>
-          {/* <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-indigo-50 dark:bg-white/5 border border-indigo-100 dark:border-white/10 text-rose-600 dark:text-rose-400 text-[10px] font-bold tracking-[0.3em] uppercase">
-            Operational Excellence
-          </div> */}
           <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight transition-colors duration-500">
             Transforming{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-violet-500 to-indigo-600 dark:from-rose-400 dark:via-violet-400 dark:to-indigo-400">
@@ -36,7 +32,6 @@ export default function Challenges() {
           </p>
         </FadeIn>
       </div>
-
       <FadeIn delay={0.2} className="relative z-10">
         <StateLogosCarousel />
       </FadeIn>
@@ -62,9 +57,6 @@ export default function Challenges() {
                 </p>
 
                 <div className="flex items-center text-sm font-bold mt-auto pt-8 border-t border-slate-100 dark:border-white/5 uppercase tracking-widest transition-colors">
-                  {/* <span className="bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 py-1.5 px-3 rounded-lg text-[10px] mr-3 transition-colors">
-                    Solution
-                  </span> */}
                   <span className="text-slate-950 dark:text-white text-xs transition-colors">
                     {item.solution}
                   </span>

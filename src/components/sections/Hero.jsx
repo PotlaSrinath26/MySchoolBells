@@ -15,41 +15,70 @@ export default function Hero() {
     return (
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center pt-20"
+        className="relative min-h-screen flex items-center justify-center pt-20 bg-[#fdfcfb] overflow-hidden"
       >
+        {/* Decorative Color Shades - Light Mode */}
+        <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-indigo-200/30 rounded-full blur-[100px] z-0"></div>
+        <div className="absolute top-[0%] right-[-5%] w-[40%] h-[50%] bg-rose-200/30 rounded-full blur-[100px] z-0"></div>
+        <div className="absolute bottom-[-10%] left-[10%] w-[50%] h-[40%] bg-cyan-200/30 rounded-full blur-[100px] z-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.3,
-              duration: 0.8,
-              ease: "easeInOut",
-            }}
-            className="relative flex flex-col gap-4 items-center justify-center"
+            transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
+            className="relative flex flex-col gap-4 sm:gap-6 items-center justify-center"
           >
-            <h1 className="text-6xl lg:text-[100px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 mb-4">
+            <h1 className="text-4xl sm:text-6xl lg:text-[100px] font-black bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-rose-500 to-violet-600 mb-2 tracking-tighter leading-none">
               MY SCHOOL BELLS
             </h1>
-            <p className="max-w-2xl mx-auto text-lg text-slate-700 mb-8 leading-relaxed font-semibold">
-              The Next Generation of Educational Management. Experience the
-              brilliance of a perfectly synchronized institution.
+            <p className="max-w-xl mx-auto text-sm sm:text-xl text-slate-600 mb-6 sm:mb-8 leading-relaxed font-bold tracking-tight uppercase tracking-[0.1em]">
+              From the First Bell to the Last, We Manage It All.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <Button
                 variant="primary"
-                className="text-lg px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white shadow-2xl transition-all font-bold uppercase tracking-widest border-none"
+                className="w-full sm:w-auto text-sm sm:text-lg px-8 sm:px-12 py-4 sm:py-6 bg-indigo-600 hover:bg-indigo-700 text-white shadow-[0_20px_50px_rgba(79,70,229,0.3)] transition-all font-black uppercase tracking-widest border-none rounded-full"
               >
                 Start Free Trial
               </Button>
-              <Link to="/modules">
+              <Link to="/modules" className="w-full sm:w-auto">
                 <Button
                   variant="outline"
-                  className="text-lg px-10 py-5 border-indigo-300 text-indigo-900 hover:bg-indigo-50 backdrop-blur-sm font-bold uppercase tracking-widest"
+                  className="w-full sm:w-auto text-sm sm:text-lg px-8 sm:px-12 py-4 sm:py-6 border-2 border-indigo-200 text-indigo-900 hover:bg-indigo-50 backdrop-blur-sm font-black uppercase tracking-widest rounded-full transition-all"
                 >
                   View Modules
                 </Button>
               </Link>
+            </div>
+
+            {/* Stats for Light Mode */}
+            <div className="mt-20 flex flex-wrap justify-center gap-12 text-sm font-medium">
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-16 h-16 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 font-black italic text-2xl shadow-sm">
+                  2M
+                </div>
+                <div className="text-center">
+                  <div className="text-slate-900 text-sm font-black tracking-tight">
+                    2 Million+
+                  </div>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">
+                    Active Users
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-16 h-16 rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 font-black italic text-2xl shadow-sm">
+                  12+
+                </div>
+                <div className="text-center">
+                  <div className="text-slate-900 text-sm font-black tracking-tight">
+                    12+ Modules
+                  </div>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">
+                    Full Coverage
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -69,12 +98,10 @@ export default function Hero() {
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}
       ></div>
-
       {/* Decorative Color Shades - Decent & Lite */}
       <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-indigo-500/15 rounded-full blur-[120px] z-0"></div>
       <div className="absolute top-[0%] right-[-10%] w-[50%] h-[60%] bg-sky-500/15 rounded-full blur-[120px] z-0"></div>
       <div className="absolute bottom-[-20%] left-[20%] w-[60%] h-[50%] bg-cyan-500/15 rounded-full blur-[120px] z-0"></div>
-
       {/* Small Education Icons Pattern - "Small Design" */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Top Left - Book */}
@@ -93,7 +120,6 @@ export default function Hero() {
             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
           </svg>
         </div>
-
         {/* Top Right - Graduation Cap */}
         <div className="absolute top-[15%] right-[10%] opacity-20 animate-float delay-700">
           <svg
@@ -110,7 +136,6 @@ export default function Hero() {
             <path d="M6 12v5c3 3 9 3 12 0v-5" />
           </svg>
         </div>
-
         {/* Bottom Left - Atom */}
         <div className="absolute bottom-[20%] left-[12%] opacity-20 animate-float delay-1500">
           <svg
@@ -190,27 +215,27 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center pt-20">
         <FadeIn>
-          <h1 className="text-6xl lg:text-[100px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-400 via-violet-400 to-indigo-400 pb-2">
+          <h1 className="text-4xl sm:text-6xl lg:text-[100px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-400 via-violet-400 to-indigo-400 pb-2">
             MY SCHOOL BELLS
             <br />
           </h1>
 
-          <p className="max-w-2xl mx-auto text-lg text-slate-300 mb-12 leading-relaxed font-light tracking-wide">
+          <p className="max-w-xl mx-auto text-sm sm:text-lg text-slate-300 mb-8 sm:mb-12 leading-relaxed font-light tracking-wide">
             School-Bells ERP - From the First Bell to the Last, We Manage It
             All.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             <Button
               variant="white"
-              className="text-lg px-12 py-6 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(244,63,94,0.6)] bg-white text-slate-900 hover:bg-rose-500 hover:text-white hover:scale-105 transition-all duration-300 font-bold uppercase tracking-widest border-none rounded-full"
+              className="w-full sm:w-auto text-sm sm:text-lg px-8 sm:px-12 py-4 sm:py-6 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(244,63,94,0.6)] bg-white text-slate-900 hover:bg-rose-500 hover:text-white hover:scale-105 transition-all duration-300 font-bold uppercase tracking-widest border-none rounded-full"
             >
               Request a Free Demo
             </Button>
-            <Link to="/modules">
+            <Link to="/modules" className="w-full sm:w-auto">
               <Button
                 variant="outline"
-                className="text-lg px-12 py-6 border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-md font-bold uppercase tracking-widest rounded-full hover:border-white transition-all duration-300"
+                className="w-full sm:w-auto text-sm sm:text-lg px-8 sm:px-12 py-4 sm:py-6 border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-md font-bold uppercase tracking-widest rounded-full hover:border-white transition-all duration-300"
               >
                 Explore the Platform
               </Button>
@@ -264,11 +289,6 @@ export default function Hero() {
             </div>
           </div>
         </FadeIn>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-30 z-20">
-        <div className="w-1 h-16 rounded-full bg-gradient-to-b from-white via-white/50 to-transparent shadow-[0_0_10px_rgba(255,255,255,0.5)]"></div>
       </div>
     </section>
   );

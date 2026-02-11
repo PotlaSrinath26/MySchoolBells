@@ -42,16 +42,7 @@ export default function About() {
                 students. MySchoolBells brings all school activities onto a
                 single, secure, and easy-to-use digital platform.
               </p>
-              {/* <p className="text-slate-400 text-base">
-                From the moment a student applies for admission to the day they
-                graduate or transfer, every record, interaction, and process is
-                managed digitally with accuracy and transparency through
-                MySchoolBells. The platform eliminates manual paperwork, reduces
-                administrative workload, and ensures smooth coordination between
-                school staff, parents, and students.
-              </p> */}
             </div>
-
             <div className="flex flex-col gap-4 mb-10">
               {points.map((point, i) => (
                 <div key={i} className="flex items-center gap-3">
@@ -63,7 +54,6 @@ export default function About() {
               ))}
             </div>
           </FadeIn>
-
           {/* Right Image */}
           <ScaleIn delay={0.2} className="relative group">
             <div className="absolute -inset-4 bg-gradient-to-tr from-rose-500/20 to-indigo-500/20 rounded-[3rem] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity"></div>

@@ -44,18 +44,7 @@ export default function Footer() {
               MySchoolBells brings all school activities onto a single, secure,
               and easy-to-use digital platform.
             </p>
-            {/* <div className="flex gap-4">
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="w-11 h-11 bg-slate-200 dark:bg-white/5 rounded-xl flex items-center justify-center hover:bg-rose-500 hover:scale-110 border border-slate-200 dark:border-white/5 transition-all cursor-pointer text-slate-900 dark:text-white group"
-                >
-                  <div className="w-1.5 h-1.5 rounded-full bg-indigo-600 dark:bg-white/40 group-hover:bg-white"></div>
-                </div>
-              ))}
-            </div> */}
           </div>
-
           <div>
             <h4 className="text-slate-900 dark:text-white font-bold mb-8 text-[10px] uppercase tracking-[0.2em] border-l-2 border-rose-500 pl-4 transition-colors">
               Navigation

@@ -42,9 +42,6 @@ export default function Modules() {
               Back to Home
             </Link>
           </div>
-          {/* <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-indigo-50 dark:bg-white/5 border border-indigo-100 dark:border-white/10 text-rose-600 dark:text-rose-400 text-[10px] font-bold tracking-[0.3em] uppercase">
-            Platform Capabilities
-          </div> */}
           <h2 className="text-4xl lg:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter transition-colors uppercase">
             Powerful{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-violet-500 to-indigo-600 dark:from-rose-400 dark:via-violet-400 dark:to-indigo-400">
@@ -74,7 +71,6 @@ export default function Modules() {
           </div>
         </FadeIn>
       </div>
-
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-10 px-4 transition-all duration-500">
         {filteredModules.map((module, idx) => (
           <FadeIn key={module.id} delay={idx * 0.05} className="h-full">
@@ -106,7 +102,6 @@ export default function Modules() {
                     <p className="text-slate-600 dark:text-slate-400 mb-8 text-[11px] leading-relaxed font-bold line-clamp-2">
                       {module.description}
                     </p>
-
                     <div className="mt-auto">
                       <span className="text-[9px] font-black text-slate-400 group-hover:text-indigo-600 uppercase tracking-[0.2em] transition-colors flex items-center gap-2">
                         Explore

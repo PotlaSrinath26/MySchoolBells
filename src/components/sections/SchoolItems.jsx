@@ -22,9 +22,6 @@ export default function SchoolItems() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">
             <FadeIn>
-              {/* <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-indigo-50 dark:bg-white/5 border border-indigo-100 dark:border-white/10 text-rose-600 dark:text-rose-400 text-[10px] font-bold tracking-[0.3em] uppercase">
-                Beyond the ERP
-              </div> */}
               <h2 className="text-4xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight leading-tight transition-colors">
                 Essential{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-violet-600 dark:from-rose-400 dark:to-violet-400">
@@ -69,7 +66,6 @@ export default function SchoolItems() {
                       className="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-60 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 dark:from-[#020617] dark:via-[#020617]/40 to-transparent transition-colors duration-500"></div>
-
                     <div className="absolute inset-0 p-8 flex flex-col justify-end">
                       <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-xl group-hover:bg-rose-500 group-hover:text-white transition-all duration-300">
                         <item.icon className="w-6 h-6 text-indigo-600 group-hover:text-white transition-colors" />

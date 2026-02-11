@@ -28,7 +28,7 @@ export default function Testimonials() {
     <div className="py-20 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
         <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-         My School Bells <span className="text-orange-500">Advantage</span>
+         My School Bells <span className="text-orange-500">Advantages</span>
         </h2>
         <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
          School Bells empowers educators and administrators to lead their campuses with confidence, clarity, and calm—so every school day runs smoothly and purposefully.

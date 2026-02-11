@@ -28,6 +28,7 @@ import FloatingAssistant from "./components/FloatingAssistant";
 import { AuroraBackgroundDemo } from "./components/sections/AuroraBackgroundDemo";
 import { ShuffleHero } from "./components/ui/ShuffleHero";
 import Testimonials from "./components/sections/Testimonials";
+import AcademicCalendar from "./components/sections/AcademicCalendar";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -54,6 +55,7 @@ function HomePage() {
       <ShuffleHero />
       <About />
       <Dashboards />
+      <AcademicCalendar />
       <Challenges />
       <SchoolItems />
       <Testimonials />
@@ -120,12 +122,12 @@ function AppBackground() {
           [background-image:var(--white-gradient),var(--aurora)]
           [background-size:300%,_200%]
           [background-position:50%_50%,50%_50%]
-          filter blur-[10px] invert
+          opacity-[0.4] will-change-transform
           after:content-[''] after:absolute after:inset-0 after:[background-image:var(--white-gradient),var(--aurora)]
           after:[background-size:200%,_100%] 
-          after:animate-aurora after:[background-attachment:fixed] after:mix-blend-difference
-          absolute -inset-[10px] opacity-50 will-change-transform
-          [mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)]
+          after:animate-aurora after:[background-attachment:fixed]
+          absolute -inset-[10px]
+          [mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,transparent_70%)]
         "
       ></div>
     </div>
