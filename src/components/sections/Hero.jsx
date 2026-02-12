@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Button } from "../ui/Button";
+import { Button } from "../layout/BottomNav";
 import { FadeIn } from "../ui/Animations";
 import { useTheme } from "../../lib/ThemeContext";
 import { motion } from "framer-motion";
@@ -105,7 +105,7 @@ export default function Hero() {
       {/* Small Education Icons Pattern - "Small Design" */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Top Left - Book */}
-        <div className="absolute top-[18%] left-[8%] opacity-20 animate-float">
+        <div className="absolute top-[18%] left-[8%] opacity-20 animate-float hidden sm:block">
           <svg
             width="72"
             height="72"
@@ -121,7 +121,7 @@ export default function Hero() {
           </svg>
         </div>
         {/* Top Right - Graduation Cap */}
-        <div className="absolute top-[15%] right-[10%] opacity-20 animate-float delay-700">
+        <div className="absolute top-[15%] right-[10%] opacity-20 animate-float delay-700 hidden sm:block">
           <svg
             width="72"
             height="72"
@@ -137,7 +137,7 @@ export default function Hero() {
           </svg>
         </div>
         {/* Bottom Left - Atom */}
-        <div className="absolute bottom-[20%] left-[12%] opacity-20 animate-float delay-1500">
+        <div className="absolute bottom-[20%] left-[12%] opacity-20 animate-float delay-1500 hidden sm:block">
           <svg
             width="72"
             height="72"
@@ -161,7 +161,7 @@ export default function Hero() {
         </div>
 
         {/* Bottom Right - Lightbulb */}
-        <div className="absolute bottom-[25%] right-[12%] opacity-20 animate-float delay-2000">
+        <div className="absolute bottom-[25%] right-[12%] opacity-20 animate-float delay-2000 hidden sm:block">
           <svg
             width="72"
             height="72"
@@ -179,7 +179,7 @@ export default function Hero() {
         </div>
 
         {/* Mid Left - Pencil */}
-        <div className="absolute top-[45%] left-[5%] opacity-15 animate-float delay-1000">
+        <div className="absolute top-[45%] left-[5%] opacity-15 animate-float delay-1000 hidden sm:block">
           <svg
             width="72"
             height="72"
@@ -195,7 +195,7 @@ export default function Hero() {
         </div>
 
         {/* Mid Right - Globe */}
-        <div className="absolute top-[50%] right-[5%] opacity-15 animate-float delay-3000">
+        <div className="absolute top-[50%] right-[5%] opacity-15 animate-float delay-3000 hidden sm:block">
           <svg
             width="72"
             height="72"
@@ -213,11 +213,10 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center pt-24 sm:pt-32">
         <FadeIn>
-          <h1 className="text-4xl sm:text-6xl lg:text-[100px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-400 via-violet-400 to-indigo-400 pb-2">
+          <h1 className="text-3xl sm:text-6xl lg:text-[100px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-400 via-violet-400 to-indigo-400 pb-2">
             MY SCHOOL BELLS
-            <br />
           </h1>
 
           <p className="max-w-xl mx-auto text-sm sm:text-lg text-slate-300 mb-8 sm:mb-12 leading-relaxed font-light tracking-wide">
@@ -228,21 +227,21 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
             <Button
               variant="white"
-              className="w-full sm:w-auto text-sm sm:text-lg px-8 sm:px-12 py-4 sm:py-6 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(244,63,94,0.6)] bg-white text-slate-900 hover:bg-rose-500 hover:text-white hover:scale-105 transition-all duration-300 font-bold uppercase tracking-widest border-none rounded-full"
+              className="haptic-btn w-full sm:w-auto text-sm sm:text-lg px-8 sm:px-12 py-4 sm:py-6 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(244,63,94,0.6)] bg-white text-slate-900 hover:bg-rose-500 hover:text-white hover:scale-105 transition-all duration-300 font-bold uppercase tracking-widest border-none rounded-full"
             >
               Request a Free Demo
             </Button>
             <Link to="/modules" className="w-full sm:w-auto">
               <Button
                 variant="outline"
-                className="w-full sm:w-auto text-sm sm:text-lg px-8 sm:px-12 py-4 sm:py-6 border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-md font-bold uppercase tracking-widest rounded-full hover:border-white transition-all duration-300"
+                className="haptic-btn w-full sm:w-auto text-sm sm:text-lg px-8 sm:px-12 py-4 sm:py-6 border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-md font-bold uppercase tracking-widest rounded-full hover:border-white transition-all duration-300"
               >
                 Explore the Platform
               </Button>
             </Link>
           </div>
 
-          <div className="mt-24 flex flex-wrap justify-center gap-16 text-sm font-medium">
+          <div className="mt-20 sm:mt-32 flex flex-wrap justify-center gap-8 sm:gap-16 text-sm font-medium">
             <div className="flex flex-col items-center gap-4 group">
               <div className="w-20 h-20 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-rose-500/10 group-hover:border-rose-500/30 transition-all duration-500 backdrop-blur-md shadow-lg group-hover:scale-110">
                 <div className="w-3 h-3 rounded-full bg-rose-500 shadow-[0_0_20px_rgba(244,63,94,1)] animate-pulse"></div>

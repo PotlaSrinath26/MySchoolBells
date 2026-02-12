@@ -25,30 +25,18 @@ const ROUTE_MAP = {
   "all modules": "/modules",
   features: "/modules",
 
-  // Demos
-  demo: "/glowing-demo",
-  "glowing demo": "/glowing-demo",
-  "glowing effect": "/glowing-demo",
-  aurora: "/aurora-demo",
-  "aurora demo": "/aurora-demo",
-  "aurora effect": "/aurora-demo",
+  "aurora effect": "/",
 };
 
 const PAGE_TITLES = {
   "/": "Home",
   "/modules": "All Modules",
-  "/glowing-demo": "Glowing Effect Demo",
-  "/aurora-demo": "Aurora Effect Demo",
 };
 
 const NAVIGATION_MENU = {
   "Main Pages": [
     { label: "Home", route: "/" },
     { label: "All Modules", route: "/modules" },
-  ],
-  Demos: [
-    { label: "Glowing Effect", route: "/glowing-demo" },
-    { label: "Aurora Effect", route: "/aurora-demo" },
   ],
 };
 

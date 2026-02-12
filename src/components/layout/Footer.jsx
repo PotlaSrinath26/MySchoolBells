@@ -27,7 +27,7 @@ export default function Footer() {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-violet-500/5 blur-[120px] rounded-full pointer-events-none transition-colors"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 lg:gap-8 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-16 lg:gap-8 mb-20">
           <div className="col-span-1 lg:col-span-1">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center text-indigo-950 font-serif italic text-2xl shadow-xl shadow-indigo-900/10">
@@ -107,11 +107,11 @@ export default function Footer() {
         </div>
 
         <div className="pt-12 border-t border-slate-200 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 transition-colors">
-          <div className="text-[10px] font-bold text-slate-500 dark:text-slate-600 uppercase tracking-[0.3em] transition-colors">
+          <div className="text-[10px] font-bold text-slate-500 dark:text-slate-600 uppercase tracking-[0.3em] transition-colors text-center md:text-left">
             &copy; {currentYear} MY SCHOOL BELLS ERP &bull; DEFINING EDUCATIONAL
             EXCELLENCE
           </div>
-          <div className="flex gap-8 text-[10px] font-bold text-slate-500 dark:text-slate-600 uppercase tracking-widest">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-[10px] font-bold text-slate-500 dark:text-slate-600 uppercase tracking-widest">
             <a
               href="#"
               className="hover:text-indigo-600 dark:hover:text-white transition-colors"

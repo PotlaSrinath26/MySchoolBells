@@ -5,67 +5,67 @@ import { cn } from "../../lib/utils";
 const squareData = [
   {
     id: 1,
-    src: "https://i.pinimg.com/736x/ab/9a/6f/ab9a6f5aca7ee4b8a9295d988dcfa8ec.jpg",
+    src: "/Images/MySchool/MySchoolBells/Homework.webp",
   },
   {
     id: 2,
-    src: "https://i.pinimg.com/1200x/0a/23/d8/0a23d8d2a2127949bc73d6ac97d690fc.jpg",
+     src: "/Images/MySchool/MySchoolBells/Games.webp",
   },
   {
     id: 3,
-    src: "https://i.pinimg.com/736x/38/a1/ca/38a1cad9ae4dc582f0d491e19826aee1.jpg",
+    src: "/Images/MySchool/MySchoolBells/home.webp",
   },
   {
     id: 4,
-    src: "https://i.pinimg.com/736x/b6/81/e5/b681e59857c32b045d4222afd06a2886.jpg",
+    src: "/Images/MySchool/MySchoolBells/SmartLibary.webp",
   },
   {
     id: 5,
-    src: "https://i.pinimg.com/1200x/54/d1/f1/54d1f153037e28aa467fe04166166459.jpg",
+   src: "/Images/MySchool/MySchoolBells/Parent&StudentPortal.webp",
   },
   {
     id: 6,
-    src: "https://i.pinimg.com/736x/41/01/4c/41014c4b7e70a9cd7e7ac6000cf870d9.jpg",
+    src: "/Images/MySchool/MySchoolBells/Hostel.webp",
   },
   {
     id: 7,
-    src: "https://i.pinimg.com/1200x/b0/c9/32/b0c932f82dc644c2590bb2f89162f363.jpg",
+    src: "/Images/MySchool/MySchoolBells/lessonplanning.webp",
   },
   {
     id: 8,
-    src: "https://i.pinimg.com/736x/36/66/eb/3666eba986cabef1dfc976b4d8d3bc9c.jpg",
+    src: "/Images/MySchool/MySchoolBells/HelpDesk.webp",
   },
   {
     id: 9,
-    src: "https://i.pinimg.com/736x/8a/24/7b/8a247b63fbfeffaf105821fc1388a87b.jpg",
+    src: "/Images/MySchool/MySchoolBells/transportation.webp",
   },
   {
     id: 10,
-    src: "https://i.pinimg.com/736x/2b/33/08/2b3308e145e088167f2633865f694a6b.jpg",
+    src: "/Images/MySchool/MySchoolBells/MySchoolBell.webp",
   },
   {
     id: 11,
-    src: "https://i.pinimg.com/736x/53/ac/93/53ac93600a99cee6760a7610173367f4.jpg",
+    src: "/Images/MySchool/MySchoolBells/MySchoolBellINR.webp",
   },
   {
     id: 12,
-    src: "https://i.pinimg.com/736x/68/ca/5c/68ca5c88bc164f2fc79aa3eab3871849.jpg",
+    src: "/Images/MySchool/MySchoolBells/StudentData.webp",
   },
   {
     id: 13,
-    src: "https://i.pinimg.com/736x/58/02/78/580278b4feb17dc409569c6db27fb643.jpg",
+    src: "/Images/MySchool/MySchoolBells/Edu.webp",
   },
   {
     id: 14,
-    src: "https://i.pinimg.com/736x/16/4c/f7/164cf7da7a066d6b879c7b80aa509044.jpg",
+    src: "/Images/MySchool/MySchoolBells/documentapprovalsystem.webp",
   },
   {
     id: 15,
-    src: "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=500&auto=format&fit=crop",
+    src: "/Images/MySchool/MySchoolBells/Inventory&Asset.webp",
   },
   {
     id: 16,
-    src: "https://i.pinimg.com/1200x/d1/78/b6/d178b6679c6dc29bd61d4ec0a4a9cc94.jpg",
+    src: "/Images/MySchool/MySchoolBells/DigitalMaketing.webp",
   },
 ];
 

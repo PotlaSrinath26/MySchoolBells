@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "../ui/Button";
+import { Button } from "../layout/BottomNav";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useTheme } from "../../lib/ThemeContext";
 import { useAuth } from "../../lib/AuthContext";
@@ -44,7 +44,7 @@ export default function Navbar() {
           : "bg-transparent py-8"
       }`}
     >
-      <div className="max-w-full mx-auto px-6 sm:px-12 lg:px-16 flex items-center justify-between gap-6">
+      <div className="max-w-full mx-auto px-4 sm:px-12 lg:px-16 flex items-center justify-between gap-2 sm:gap-6">
         {/* Logo Section */}
         <Link to="/" className="group flex items-center gap-2 shrink-0">
           {/* <div className="relative w-14 h-14 rounded-3xl flex items-center justify-center  font-serif italic text-3xl group-hover:rotate-12 transition-transform duration-500 shadow-xl shadow-indigo-900/10 overflow-hidden ring-1 ring-slate-100 dark:ring-white/10"> */}
@@ -107,7 +107,7 @@ export default function Navbar() {
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl transition-all duration-500 border group relative overflow-hidden ${
+            className={`p-2 sm:p-3 rounded-xl sm:rounded-2xl transition-all duration-500 border group relative overflow-hidden haptic-btn ${
               theme === "dark"
                 ? "bg-white/5 text-yellow-400 hover:bg-white/10 border-white/5 shadow-[0_0_20px_rgba(250,204,21,0.2)]"
                 : "bg-white text-indigo-600 hover:bg-slate-50 border-slate-200 shadow-[0_10px_30px_rgba(79,70,229,0.1)]"
@@ -125,10 +125,13 @@ export default function Navbar() {
             ></div>
           </button>
 
-          <Link to={user ? "/erp/dashboard" : "/erp/login"}>
+          <Link
+            to={user ? "/erp/dashboard" : "/erp/login"}
+            className="hidden sm:block"
+          >
             <Button
               variant={theme === "dark" ? "white" : "primary"}
-              className="py-2.5 sm:py-3.5 px-4 sm:px-10 shadow-2xl transition-all text-[9px] sm:text-[11px] font-black uppercase tracking-[0.1em] sm:tracking-[0.2em] border-none group relative overflow-hidden ring-1 ring-white/10"
+              className="haptic-btn py-2.5 sm:py-3.5 px-4 sm:px-10 shadow-2xl transition-all text-[9px] sm:text-[11px] font-black uppercase tracking-[0.1em] sm:tracking-[0.2em] border-none group relative overflow-hidden ring-1 ring-white/10"
             >
               <span className="relative z-10">
                 {user ? "Dashboard" : "ERP Login"}
@@ -140,7 +143,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-3 rounded-2xl bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white transition-all transform hover:scale-105 active:scale-95 shadow-sm border border-slate-200 dark:border-white/10"
+            className="xl:hidden p-3 rounded-2xl bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white transition-all transform hover:scale-105 haptic-btn active:scale-95 shadow-sm border border-slate-200 dark:border-white/10"
           >
             {mobileMenuOpen ? (
               <XMarkIcon className="w-6 h-6" />

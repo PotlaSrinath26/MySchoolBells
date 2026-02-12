@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { modules, moduleDetails } from "../../data/modules";
 import { FadeIn, ScaleIn } from "../ui/Animations";
 import { ArrowLeftIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
-import { Button } from "../ui/Button";
+import { Button } from "../layout/BottomNav";
 import NeuralBackground from "../ui/flow-field-background";
 import { useTheme } from "../../lib/ThemeContext";
 import { GlowingEffect } from "../ui/glowing-effect";

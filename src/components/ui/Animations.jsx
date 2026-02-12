@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 
 export const FadeIn = ({ children, delay = 0, className = "" }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "-10px" });
 
   return (
     <motion.div
@@ -20,7 +20,7 @@ export const FadeIn = ({ children, delay = 0, className = "" }) => {
 
 export const ScaleIn = ({ children, delay = 0, className = "" }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "-10px" });
 
   return (
     <motion.div

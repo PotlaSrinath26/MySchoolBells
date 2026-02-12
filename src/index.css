@@ -149,3 +149,27 @@ body::after {
     stroke-dashoffset: 0;
   }
 }
+
+/* Mobile App Optimization Utilities */
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Native App-like Haptic Feedback */
+@layer components {
+  .haptic-btn {
+    @apply active:scale-95 transition-transform duration-100 ease-out;
+  }
+}

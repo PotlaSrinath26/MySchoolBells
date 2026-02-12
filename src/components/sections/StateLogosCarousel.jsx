@@ -45,34 +45,6 @@ const stateLogos = [
     name: "Bihar",
     src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Seal_of_Bihar.svg/200px-Seal_of_Bihar.svg.png",
   },
-  {
-    name: "Uttar Pradesh",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Seal_of_Uttar_Pradesh.svg/200px-Seal_of_Uttar_Pradesh.svg.png",
-  },
-  {
-    name: "West Bengal",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Seal_of_West_Bengal.svg/200px-Seal_of_West_Bengal.svg.png",
-  },
-  {
-    name: "Bihar",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Seal_of_Bihar.svg/200px-Seal_of_Bihar.svg.png",
-  },
-  {
-    name: "Odisha",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Seal_of_Odisha.svg/200px-Seal_of_Odisha.svg.png",
-  },
-  {
-    name: "Madhya Pradesh",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Seal_of_Madhya_Pradesh.svg/200px-Seal_of_Madhya_Pradesh.svg.png",
-  },
-  {
-    name: "Punjab",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Seal_of_Punjab.svg/200px-Seal_of_Punjab.svg.png",
-  },
-  {
-    name: "Haryana",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Seal_of_Haryana.svg/200px-Seal_of_Haryana.svg.png",
-  },
 ];
 
 export default function StateLogosCarousel() {

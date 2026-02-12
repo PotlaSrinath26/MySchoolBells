@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Section } from "../ui/Section";
 import { modules } from "../../data/modules";
 import { FadeIn } from "../ui/Animations";
-import { Button } from "../ui/Button";
+import { Button } from "../layout/BottomNav";
 
 import { GlowingEffect } from "../ui/glowing-effect";
 

@@ -36,7 +36,7 @@ export default function Dashboards() {
                   Cognitive Core
                 </span>
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 dark:text-white mb-6 sm:mb-8 tracking-tighter leading-[0.9] transition-colors">
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 dark:text-white mb-6 sm:mb-8 tracking-tighter leading-tight lg:leading-[0.9] transition-colors">
                 Strategic
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-indigo-600 to-emerald-500 animate-gradient-x">
@@ -105,7 +105,7 @@ export default function Dashboards() {
             <div className="absolute -inset-10 bg-gradient-to-tr from-indigo-500/20 via-violet-500/10 to-rose-500/20 rounded-[3rem] blur-[80px] opacity-40 group-hover:opacity-60 transition-opacity"></div>
 
             {/* The Glass OS Frame */}
-            <div className="relative w-full aspect-square sm:aspect-[4/3] bg-white/90 dark:bg-[#070b14]/90 backdrop-blur-[40px] rounded-[2rem] sm:rounded-[3rem] border border-white/60 dark:border-white/10 shadow-[0_60px_100px_-30px_rgba(0,0,0,0.4)] overflow-hidden flex flex-col ring-1 ring-black/5 dark:ring-white/5">
+            <div className="relative w-full h-auto min-h-[400px] lg:aspect-[4/3] bg-white/90 dark:bg-[#070b14]/90 backdrop-blur-[40px] rounded-[2rem] sm:rounded-[3rem] border border-white/60 dark:border-white/10 shadow-[0_60px_100px_-30px_rgba(0,0,0,0.4)] overflow-visible lg:overflow-hidden flex flex-col ring-1 ring-black/5 dark:ring-white/5">
               {/* Luxury Toolbar */}
               <div className="px-6 sm:px-10 py-4 sm:py-6 border-b border-slate-200/50 dark:border-white/5 flex items-center justify-between bg-white/50 dark:bg-white/5">
                 <div className="flex items-center gap-3 sm:gap-4">
@@ -115,22 +115,22 @@ export default function Dashboards() {
                     <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500/40 border border-emerald-500/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.1)]"></div>
                   </div>
                   <div className="h-4 w-px bg-slate-200 dark:bg-white/10 mx-1 sm:mx-2"></div>
-                  <span className="text-[9px] sm:text-[11px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] sm:tracking-[0.4em]">
+                  <span className="text-[9px] sm:text-[11px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] sm:tracking-[0.4em] truncate">
                     Intelligence OS v4.0
                   </span>
                 </div>
               </div>
               {/* Persona Contexts */}
-              <div className="flex-grow p-10 overflow-hidden relative">
+              <div className="flex-grow p-4 sm:p-10 overflow-visible lg:overflow-hidden relative">
                 {activeTab === "management" && (
                   <div className="h-full flex flex-col gap-10">
-                    <div className="grid grid-cols-2 gap-8">
-                      <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 shadow-sm relative overflow-hidden group/card transition-all">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8">
+                      <div className="p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 shadow-sm relative overflow-hidden group/card transition-all">
                         <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-emerald-500/10 to-transparent blur-2xl"></div>
                         <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3">
                           Fiscal Velocity
                         </p>
-                        <div className="text-4xl font-black text-slate-900 dark:text-white">
+                        <div className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
                           $4.92M
                         </div>
                         <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 rounded-full">
@@ -139,11 +139,11 @@ export default function Dashboards() {
                           </span>
                         </div>
                       </div>
-                      <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 shadow-sm">
+                      <div className="p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] bg-slate-50 dark:bg-white/5 border border-slate-200/50 dark:border-white/10 shadow-sm">
                         <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3">
                           Core Efficiency
                         </p>
-                        <div className="text-4xl font-black text-slate-900 dark:text-white">
+                        <div className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
                           99.8%
                         </div>
                         <div className="mt-4 inline-flex items-center gap-2 px-3 py-1 bg-indigo-500/10 rounded-full">
@@ -291,7 +291,7 @@ export default function Dashboards() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4 flex-grow">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 flex-grow">
                       <div className="bg-slate-50 dark:bg-white/5 rounded-[2.5rem] p-10 flex flex-col items-center justify-center border border-slate-200/50 dark:border-white/5 relative overflow-hidden group/radar shadow-inner">
                         <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/[0.02] to-transparent"></div>
                         <div className="relative w-40 h-40 flex items-center justify-center">

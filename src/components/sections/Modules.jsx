@@ -54,12 +54,12 @@ export default function Modules() {
           </p>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-24 max-w-4xl mx-auto px-4">
+          <div className="flex flex-nowrap sm:flex-wrap items-center sm:justify-center gap-3 mb-16 sm:mb-24 max-w-4xl mx-auto px-4 overflow-x-auto no-scrollbar pb-4 sm:pb-0">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 border-2 ${
+                className={`flex-shrink-0 px-6 sm:px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-500 border-2 ${
                   activeCategory === cat.id
                     ? "bg-indigo-600 border-indigo-600 text-white shadow-xl shadow-indigo-500/20 translate-y-[-2px]"
                     : "bg-white/50 dark:bg-white/5 border-slate-100 dark:border-white/10 text-slate-500 dark:text-slate-400 hover:border-rose-500/30 hover:text-rose-600"

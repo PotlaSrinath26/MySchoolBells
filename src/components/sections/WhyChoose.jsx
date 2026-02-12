@@ -1,6 +1,6 @@
 import React from "react";
 import { Section } from "../ui/Section";
-import { Button } from "../ui/Button";
+import { Button } from "../layout/BottomNav";
 import { useTheme } from "../../lib/ThemeContext";
 import { FadeIn } from "../ui/Animations";
 
@@ -37,7 +37,8 @@ export default function WhyChoose() {
   return (
     <Section
       id="why-choose"
-      className="bg-transparent dark:bg-[#020617] py-32 relative overflow-hidden transition-colors duration-500">
+      className="bg-transparent dark:bg-[#020617] py-32 relative overflow-hidden transition-colors duration-500"
+    >
       {/* Dynamic Animated Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-rose-500/10 blur-[150px] rounded-full animate-blob"></div>
@@ -73,7 +74,7 @@ export default function WhyChoose() {
         </div>
         <div className="relative group lg:sticky lg:top-32">
           <div className="absolute -inset-1 bg-gradient-to-r from-rose-500 to-indigo-500 rounded-[2.5rem] blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
-          <div className="relative bg-white/70 dark:bg-indigo-950/40 backdrop-blur-2xl p-10 lg:p-14 rounded-[2.5rem] border border-slate-200 dark:border-white/10 shadow-2xl transition-colors">
+          <div className="relative bg-white/70 dark:bg-indigo-950/40 backdrop-blur-2xl p-6 sm:p-10 lg:p-14 rounded-[2.5rem] border border-slate-200 dark:border-white/10 shadow-2xl transition-colors">
             <h3 className="text-2xl font-bold mb-4 text-center text-slate-900 dark:text-white transition-colors">
               Elevate Your Operations
             </h3>
@@ -81,7 +82,7 @@ export default function WhyChoose() {
               Schedule a personalized walkthrough with our specialists.
             </p>
             <form className="space-y-5">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold text-slate-900 dark:text-slate-500 uppercase tracking-widest ml-1 transition-colors">
                     Full Name
@@ -132,7 +133,7 @@ export default function WhyChoose() {
                 <div className="absolute inset-0 bg-gradient-to-r from-rose-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </Button>
             </form>
-            <div className="mt-12 pt-8 border-t border-slate-200 dark:border-white/5 flex items-center justify-around gap-4 transition-colors">
+            <div className="mt-12 pt-8 border-t border-slate-200 dark:border-white/5 flex items-center justify-between gap-2 transition-colors">
               <div className="flex flex-col items-center gap-2">
                 <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-600">
                   <svg
