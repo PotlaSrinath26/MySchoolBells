@@ -6,6 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
+import SubNavbar from "./components/layout/SubNavbar";
 import BottomNav from "./components/layout/BottomNav";
 import Footer from "./components/layout/Footer";
 import Hero from "./components/sections/Hero";
@@ -52,6 +53,7 @@ function HomePage() {
     <>
       <Hero />
       <NeonFlowSection />
+      <SubNavbar />
       <ShuffleHero />
       <About />
       <Dashboards />

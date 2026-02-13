@@ -15,12 +15,19 @@ export default function Hero() {
     return (
       <section
         id="home"
-        className="relative min-h-screen flex items-center justify-center pt-20 bg-[#fdfcfb] overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center pt-20 bg-white overflow-hidden"
       >
-        {/* Decorative Color Shades - Light Mode */}
-        <div className="absolute top-[-10%] left-[-5%] w-[50%] h-[50%] bg-indigo-200/30 rounded-full blur-[100px] z-0"></div>
-        <div className="absolute top-[0%] right-[-5%] w-[40%] h-[50%] bg-rose-200/30 rounded-full blur-[100px] z-0"></div>
-        <div className="absolute bottom-[-10%] left-[10%] w-[50%] h-[40%] bg-cyan-200/30 rounded-full blur-[100px] z-0"></div>
+        {/* Background Image - Light Mode */}
+        <div
+          className="absolute inset-0 z-0 opacity-30 pointer-events-none"
+          style={{
+            backgroundImage: "url('/Images/MySchool/MySchoolBells/light.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></div>
+        {/* Gradient Overlay for better readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80 z-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -91,127 +98,18 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen overflow-hidden bg-[#020617] flex items-center justify-center"
     >
-      {/* Geometric Pattern Background */}
       <div
-        className="absolute inset-0 opacity-[0.03] z-0 pointer-events-none"
+        className="absolute inset-0 z-0 opacity-100 pointer-events-none"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: "url('/Images/MySchool/MySchoolBells/Green.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "brightness(0.8)", // Keeps it dark but makes the details Pop
         }}
       ></div>
-      {/* Decorative Color Shades - Decent & Lite */}
-      <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-indigo-500/15 rounded-full blur-[120px] z-0"></div>
-      <div className="absolute top-[0%] right-[-10%] w-[50%] h-[60%] bg-sky-500/15 rounded-full blur-[120px] z-0"></div>
-      <div className="absolute bottom-[-20%] left-[20%] w-[60%] h-[50%] bg-cyan-500/15 rounded-full blur-[120px] z-0"></div>
-      {/* Small Education Icons Pattern - "Small Design" */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {/* Top Left - Book */}
-        <div className="absolute top-[18%] left-[8%] opacity-20 animate-float hidden sm:block">
-          <svg
-            width="72"
-            height="72"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-          </svg>
-        </div>
-        {/* Top Right - Graduation Cap */}
-        <div className="absolute top-[15%] right-[10%] opacity-20 animate-float delay-700 hidden sm:block">
-          <svg
-            width="72"
-            height="72"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-            <path d="M6 12v5c3 3 9 3 12 0v-5" />
-          </svg>
-        </div>
-        {/* Bottom Left - Atom */}
-        <div className="absolute bottom-[20%] left-[12%] opacity-20 animate-float delay-1500 hidden sm:block">
-          <svg
-            width="72"
-            height="72"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="12" cy="12" r="3" />
-            <path
-              d="M7 19.3c-2.4-.4-4-2.5-3.5-4.9s2.5-4 4.9-3.5 4 2.5 3.5 4.9c-.4 2.4-2.5 4-4.9 3.5z"
-              transform="rotate(-45 12 12)"
-            />
-            <path
-              d="M7 19.3c-2.4-.4-4-2.5-3.5-4.9s2.5-4 4.9-3.5 4 2.5 3.5 4.9c-.4 2.4-2.5 4-4.9 3.5z"
-              transform="rotate(45 12 12)"
-            />
-          </svg>
-        </div>
-
-        {/* Bottom Right - Lightbulb */}
-        <div className="absolute bottom-[25%] right-[12%] opacity-20 animate-float delay-2000 hidden sm:block">
-          <svg
-            width="72"
-            height="72"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M9 18h6" />
-            <path d="M10 22h4" />
-            <path d="M15.09 14c.18-.9.27-1.48.27-1.48a6 6 0 0 0-11.72 0S3.73 13.1 3.91 14a3.4 3.4 0 0 0 3.09 2.6V18a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1.4c1.55-.26 2.76-1.47 3.09-2.6z" />
-          </svg>
-        </div>
-
-        {/* Mid Left - Pencil */}
-        <div className="absolute top-[45%] left-[5%] opacity-15 animate-float delay-1000 hidden sm:block">
-          <svg
-            width="72"
-            height="72"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
-          </svg>
-        </div>
-
-        {/* Mid Right - Globe */}
-        <div className="absolute top-[50%] right-[5%] opacity-15 animate-float delay-3000 hidden sm:block">
-          <svg
-            width="72"
-            height="72"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <line x1="2" y1="12" x2="22" y2="12" />
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-          </svg>
-        </div>
-      </div>
+      {/* Dark Overlay for depth and readability - Lightened for better visibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/70 via-transparent to-[#020617]/70 z-0"></div>
+      {/* Small Education Icons Pattern - Removed as per request */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center pt-24 sm:pt-32">
         <FadeIn>

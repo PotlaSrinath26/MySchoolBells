@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../layout/BottomNav";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useTheme } from "../../lib/ThemeContext";
 import { useAuth } from "../../lib/AuthContext";
 import { SunIcon, MoonIcon, UserCircleIcon } from "@heroicons/react/24/solid";
@@ -11,7 +10,6 @@ export default function Navbar() {
   const { user } = useAuth();
   const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -26,9 +24,7 @@ export default function Navbar() {
     { name: "Why Choose Us", href: "/#why-choose", type: "anchor" },
     { name: "Modules", href: "/modules", type: "link" },
   ];
-
   const isHomePage = pathname === "/";
-
   const getHref = (href) => {
     if (href.startsWith("/#") && !isHomePage) {
       return href;
@@ -139,70 +135,8 @@ export default function Navbar() {
               <div className="absolute inset-0 bg-gradient-to-r from-rose-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </Button>
           </Link>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-3 rounded-2xl bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white transition-all transform hover:scale-105 haptic-btn active:scale-95 shadow-sm border border-slate-200 dark:border-white/10"
-          >
-            {mobileMenuOpen ? (
-              <XMarkIcon className="w-6 h-6" />
-            ) : (
-              <Bars3Icon className="w-6 h-6" />
-            )}
-          </button>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 top-0 left-0 w-full h-screen bg-white/95 dark:bg-[#020617]/95 backdrop-blur-2xl z-[90] xl:hidden flex flex-col p-8 pt-32 animate-in slide-in-from-right duration-500">
-          <div className="flex flex-col gap-2">
-            {navLinks.map((link) =>
-              link.type === "link" ? (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  className={`text-3xl font-black p-6 rounded-[2.5rem] transition-all uppercase tracking-[0.1em] border-b border-slate-100 dark:border-white/5 ${
-                    theme === "dark"
-                      ? "text-slate-500 hover:text-white hover:bg-white/5"
-                      : "text-slate-400 hover:text-indigo-950 hover:bg-indigo-50"
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ) : (
-                <a
-                  key={link.name}
-                  href={getHref(link.href)}
-                  className={`text-3xl font-black p-6 rounded-[2.5rem] transition-all uppercase tracking-[0.1em] border-b border-slate-100 dark:border-white/5 ${
-                    theme === "dark"
-                      ? "text-slate-500 hover:text-white hover:bg-white/5"
-                      : "text-slate-400 hover:text-indigo-950 hover:bg-indigo-50"
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </a>
-              ),
-            )}
-            <div className="mt-12 px-6">
-              <Link
-                to={user ? "/erp/dashboard" : "/erp/login"}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <Button
-                  variant={theme === "dark" ? "white" : "primary"}
-                  className="w-full py-7 rounded-[2.5rem] font-black uppercase tracking-widest text-lg border-none shadow-2xl"
-                >
-                  {user ? "Go to Dashboard" : "ERP Login Portal"}
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
     </nav>
   );
 }
