@@ -30,6 +30,7 @@ import FloatingAssistant from "./components/FloatingAssistant";
 import { ShuffleHero } from "./components/ui/ShuffleHero";
 import Testimonials from "./components/sections/Testimonials";
 import AcademicCalendar from "./components/sections/AcademicCalendar";
+import AssemblyManagement from "./components/pages/AssemblyManagement";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -62,6 +63,7 @@ function HomePage() {
       <SchoolItems />
       <Testimonials />
       <WhyChoose />
+      <AssemblyManagement />
     </>
   );
 }

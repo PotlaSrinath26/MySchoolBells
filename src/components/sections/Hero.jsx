@@ -138,7 +138,6 @@ export default function Hero() {
               </Button>
             </Link>
           </div>
-
           <div className="mt-20 sm:mt-32 flex flex-wrap justify-center gap-8 sm:gap-16 text-sm font-medium">
             <div className="flex flex-col items-center gap-4 group">
               <div className="w-20 h-20 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-rose-500/10 group-hover:border-rose-500/30 transition-all duration-500 backdrop-blur-md shadow-lg group-hover:scale-110">
@@ -167,7 +166,6 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-
             <div className="flex flex-col items-center gap-4 group">
               <div className="w-20 h-20 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-indigo-500/10 group-hover:border-indigo-500/30 transition-all duration-500 backdrop-blur-md shadow-lg group-hover:scale-110">
                 <div className="flex gap-1.5">

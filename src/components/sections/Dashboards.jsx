@@ -30,11 +30,7 @@ export default function Dashboards() {
         <div className="space-y-12 py-8">
           <div>
             <FadeIn>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-indigo-500/5 border border-indigo-500/10 backdrop-blur-md">
-                <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
-                <span className="text-[10px] font-black text-indigo-500 dark:text-indigo-400 uppercase tracking-[0.3em]">
-                  Cognitive Core
-                </span>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full">
               </div>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 dark:text-white mb-6 sm:mb-8 tracking-tighter leading-tight lg:leading-[0.9] transition-colors">
                 Strategic
