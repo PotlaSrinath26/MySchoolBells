@@ -71,9 +71,13 @@ export default function Modules() {
           </div>
         </FadeIn>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-10 px-4 transition-all duration-500">
+      <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative z-10 px-4 transition-all duration-500 overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide">
         {filteredModules.map((module, idx) => (
-          <FadeIn key={module.id} delay={idx * 0.05} className="h-full">
+          <FadeIn
+            key={module.id}
+            delay={idx * 0.05}
+            className="h-full min-w-[85vw] md:min-w-0 snap-center shrink-0"
+          >
             <Link to={module.path} className="block h-full group">
               <div className="relative h-full transition-all duration-500 rounded-[2.5rem]">
                 <GlowingEffect

@@ -6,6 +6,11 @@ import {
   Squares2X2Icon,
   UserIcon,
   AdjustmentsHorizontalIcon,
+  SparklesIcon,
+  UserGroupIcon,
+  MapPinIcon,
+  MicrophoneIcon,
+  TrophyIcon,
 } from "@heroicons/react/24/outline";
 import {
   HomeIcon as HomeIconSolid,
@@ -13,6 +18,7 @@ import {
   Squares2X2Icon as Squares2X2IconSolid,
   UserIcon as UserSolid,
   AdjustmentsHorizontalIcon as AdjustmentsSolid,
+  SparklesIcon as SparklesIconSolid,
 } from "@heroicons/react/24/solid";
 import { useAuth } from "../../lib/AuthContext";
 import { useTheme } from "../../lib/ThemeContext";
@@ -55,6 +61,7 @@ export default function BottomNav() {
   const { user } = useAuth();
   const { theme } = useTheme();
   const isDark = theme === "dark";
+  const [isFeaturesOpen, setIsFeaturesOpen] = React.useState(false);
 
   const navItems = [
     {
@@ -70,11 +77,25 @@ export default function BottomNav() {
       activeIcon: Squares2X2IconSolid,
     },
     {
-      name: "Academy",
-      path: "/#about",
-      icon: AcademicCapIcon,
-      activeIcon: AcademicCapIconSolid,
-      isAnchor: true,
+      name: "Features",
+      path: "#",
+      icon: SparklesIcon,
+      activeIcon: SparklesIconSolid,
+      isMenu: true,
+      subItems: [
+        { name: "Faculty Flow", path: "/faculty-flow", icon: UserGroupIcon },
+        { name: "Smart Routes", path: "/smart-routes", icon: MapPinIcon },
+        {
+          name: "Assembly Manager",
+          path: "/assembly-management",
+          icon: MicrophoneIcon,
+        },
+        {
+          name: "Excellence Gallery",
+          path: "/excellence-gallery",
+          icon: TrophyIcon,
+        },
+      ],
     },
     {
       name: "ERP",
@@ -85,89 +106,173 @@ export default function BottomNav() {
   ];
 
   return (
-    <div className="xl:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[999] w-[90%] max-w-lg">
-      <div
-        className={`flex items-center justify-around p-3 px-6 rounded-[2.5rem] backdrop-blur-3xl border shadow-2xl transition-colors duration-500 ${
-          isDark
-            ? "bg-[#0a0f1e]/80 border-white/10 shadow-black/40"
-            : "bg-white/80 border-slate-200 shadow-indigo-900/10"
-        }`}
-      >
-        {navItems.map((item) => {
-          const isActive = item.isAnchor
-            ? pathname === "/" &&
-              window.location.hash === item.path.replace("/", "")
-            : pathname === item.path;
-
-          const Icon = isActive ? item.activeIcon : item.icon;
-
-          return item.isAnchor ? (
-            <a
-              key={item.name}
-              href={item.path}
-              className="flex flex-col items-center gap-1 group relative py-1 active:scale-90 transition-transform duration-200"
+    <>
+      {/* Features Popup Menu */}
+      {isFeaturesOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-[990]"
+            onClick={() => setIsFeaturesOpen(false)}
+          ></div>
+          <div className="xl:hidden fixed bottom-24 left-1/2 -translate-x-1/2 z-[999] w-[90%] max-w-lg mb-2">
+            <div
+              className={`p-4 rounded-[2rem] backdrop-blur-3xl border shadow-2xl overflow-hidden ${
+                isDark
+                  ? "bg-[#0a0f1e]/90 border-white/10 shadow-black/40"
+                  : "bg-white/90 border-slate-200 shadow-indigo-900/10"
+              }`}
             >
-              <div
-                className={`p-2 rounded-2xl transition-all duration-300 ${
-                  isActive
-                    ? "text-rose-500 scale-110"
-                    : isDark
-                      ? "text-slate-500 group-hover:text-white"
-                      : "text-slate-400 group-hover:text-indigo-950"
-                }`}
-              >
-                <Icon className="w-6 h-6" />
+              <div className="grid grid-cols-2 gap-3">
+                {navItems
+                  .find((i) => i.name === "Features")
+                  .subItems.map((sub, idx) => (
+                    <Link
+                      key={sub.name}
+                      to={sub.path}
+                      onClick={() => setIsFeaturesOpen(false)}
+                      className={`flex flex-col items-center justify-center gap-2 p-4 rounded-2xl transition-all duration-300 border ${
+                        isDark
+                          ? "bg-white/5 border-white/5 hover:bg-white/10 text-slate-300 hover:text-white"
+                          : "bg-slate-50 border-slate-100 hover:bg-indigo-50 hover:border-indigo-100 text-slate-600 hover:text-indigo-900"
+                      }`}
+                    >
+                      <sub.icon className="w-6 h-6" />
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-center">
+                        {sub.name}
+                      </span>
+                    </Link>
+                  ))}
               </div>
-              <span
-                className={`text-[9px] font-black uppercase tracking-widest transition-colors ${
-                  isActive
-                    ? "text-rose-500"
-                    : isDark
-                      ? "text-slate-600 group-hover:text-slate-300"
-                      : "text-slate-500 group-hover:text-indigo-950"
-                }`}
+            </div>
+          </div>
+        </>
+      )}
+
+      <div className="xl:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-[999] w-[90%] max-w-lg">
+        <div
+          className={`flex items-center justify-around p-3 px-6 rounded-[2.5rem] backdrop-blur-3xl border shadow-2xl transition-colors duration-500 ${
+            isDark
+              ? "bg-[#0a0f1e]/80 border-white/10 shadow-black/40"
+              : "bg-white/80 border-slate-200 shadow-indigo-900/10"
+          }`}
+        >
+          {navItems.map((item) => {
+            const isActive = item.isMenu
+              ? isFeaturesOpen ||
+                item.subItems.some((sub) => sub.path === pathname)
+              : item.isAnchor
+                ? pathname === "/" &&
+                  window.location.hash === item.path.replace("/", "")
+                : pathname === item.path;
+
+            const Icon = isActive ? item.activeIcon : item.icon;
+
+            if (item.isMenu) {
+              return (
+                <button
+                  key={item.name}
+                  onClick={() => setIsFeaturesOpen(!isFeaturesOpen)}
+                  className="flex flex-col items-center gap-1 group relative py-1 active:scale-90 transition-transform duration-200"
+                >
+                  <div
+                    className={`p-2 rounded-2xl transition-all duration-300 ${
+                      isActive
+                        ? "text-rose-500 scale-110"
+                        : isDark
+                          ? "text-slate-500 group-hover:text-white"
+                          : "text-slate-400 group-hover:text-indigo-950"
+                    }`}
+                  >
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <span
+                    className={`text-[9px] font-black uppercase tracking-widest transition-colors ${
+                      isActive
+                        ? "text-rose-500"
+                        : isDark
+                          ? "text-slate-600 group-hover:text-slate-300"
+                          : "text-slate-500 group-hover:text-indigo-950"
+                    }`}
+                  >
+                    {item.name}
+                  </span>
+                  {isActive && (
+                    <div className="absolute -bottom-1 w-1 h-1 rounded-full bg-rose-500"></div>
+                  )}
+                </button>
+              );
+            }
+
+            return item.isAnchor ? (
+              <a
+                key={item.name}
+                href={item.path}
+                onClick={() => setIsFeaturesOpen(false)}
+                className="flex flex-col items-center gap-1 group relative py-1 active:scale-90 transition-transform duration-200"
               >
-                {item.name}
-              </span>
-              {isActive && (
-                <div className="absolute -bottom-1 w-1 h-1 rounded-full bg-rose-500"></div>
-              )}
-            </a>
-          ) : (
-            <Link
-              key={item.name}
-              to={item.path}
-              className="flex flex-col items-center gap-1 group relative py-1 active:scale-90 transition-transform duration-200"
-            >
-              <div
-                className={`p-2 rounded-2xl transition-all duration-300 ${
-                  isActive
-                    ? "text-rose-500 scale-110"
-                    : isDark
-                      ? "text-slate-500 group-hover:text-white"
-                      : "text-slate-400 group-hover:text-indigo-950"
-                }`}
+                <div
+                  className={`p-2 rounded-2xl transition-all duration-300 ${
+                    isActive
+                      ? "text-rose-500 scale-110"
+                      : isDark
+                        ? "text-slate-500 group-hover:text-white"
+                        : "text-slate-400 group-hover:text-indigo-950"
+                  }`}
+                >
+                  <Icon className="w-6 h-6" />
+                </div>
+                <span
+                  className={`text-[9px] font-black uppercase tracking-widest transition-colors ${
+                    isActive
+                      ? "text-rose-500"
+                      : isDark
+                        ? "text-slate-600 group-hover:text-slate-300"
+                        : "text-slate-500 group-hover:text-indigo-950"
+                  }`}
+                >
+                  {item.name}
+                </span>
+                {isActive && (
+                  <div className="absolute -bottom-1 w-1 h-1 rounded-full bg-rose-500"></div>
+                )}
+              </a>
+            ) : (
+              <Link
+                key={item.name}
+                to={item.path}
+                onClick={() => setIsFeaturesOpen(false)}
+                className="flex flex-col items-center gap-1 group relative py-1 active:scale-90 transition-transform duration-200"
               >
-                <Icon className="w-6 h-6" />
-              </div>
-              <span
-                className={`text-[9px] font-black uppercase tracking-widest transition-colors ${
-                  isActive
-                    ? "text-rose-500"
-                    : isDark
-                      ? "text-slate-600 group-hover:text-slate-300"
-                      : "text-slate-500 group-hover:text-indigo-950"
-                }`}
-              >
-                {item.name}
-              </span>
-              {isActive && (
-                <div className="absolute -bottom-1 w-1 h-1 rounded-full bg-rose-500"></div>
-              )}
-            </Link>
-          );
-        })}
+                <div
+                  className={`p-2 rounded-2xl transition-all duration-300 ${
+                    isActive
+                      ? "text-rose-500 scale-110"
+                      : isDark
+                        ? "text-slate-500 group-hover:text-white"
+                        : "text-slate-400 group-hover:text-indigo-950"
+                  }`}
+                >
+                  <Icon className="w-6 h-6" />
+                </div>
+                <span
+                  className={`text-[9px] font-black uppercase tracking-widest transition-colors ${
+                    isActive
+                      ? "text-rose-500"
+                      : isDark
+                        ? "text-slate-600 group-hover:text-slate-300"
+                        : "text-slate-500 group-hover:text-indigo-950"
+                  }`}
+                >
+                  {item.name}
+                </span>
+                {isActive && (
+                  <div className="absolute -bottom-1 w-1 h-1 rounded-full bg-rose-500"></div>
+                )}
+              </Link>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

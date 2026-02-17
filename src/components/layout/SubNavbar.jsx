@@ -78,7 +78,7 @@ const SubNavbar = ({
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         className={cn(
-          "sticky top-[64px] sm:top-[80px] z-[800] transition-all duration-300 border-b py-3 shadow-lg backdrop-blur-md", // Increased py-2 to py-3
+          "sticky top-[65px] z-[800] transition-all duration-300 border-b py-3 shadow-lg backdrop-blur-md", // Adjusted for better alignment
           isDark
             ? "bg-[#020617]/80 border-white/10 text-white"
             : "bg-white/90 border-slate-200 text-slate-900",

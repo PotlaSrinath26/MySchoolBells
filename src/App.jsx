@@ -32,6 +32,10 @@ import Testimonials from "./components/sections/Testimonials";
 import AcademicCalendar from "./components/sections/AcademicCalendar";
 import AssemblyManagement from "./components/pages/AssemblyManagement";
 
+import FacultyFlow from "./components/pages/FacultyFlow";
+import SmartRouteManagement from "./components/pages/SmartRouteManagement";
+import ExcellenceGallery from "./components/pages/ExcellenceGallery";
+
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -63,7 +67,6 @@ function HomePage() {
       <SchoolItems />
       <Testimonials />
       <WhyChoose />
-      <AssemblyManagement />
     </>
   );
 }
@@ -99,6 +102,13 @@ function AppContent() {
               path="/erp/admin/user-registration"
               element={<UserRegistration />}
             />
+            <Route path="/faculty-flow" element={<FacultyFlow />} />
+            <Route path="/smart-routes" element={<SmartRouteManagement />} />
+            <Route
+              path="/assembly-management"
+              element={<AssemblyManagement />}
+            />
+            <Route path="/excellence-gallery" element={<ExcellenceGallery />} />
           </Routes>
         </main>
 
