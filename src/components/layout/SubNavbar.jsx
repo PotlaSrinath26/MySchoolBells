@@ -91,7 +91,6 @@ const SubNavbar = ({
               size={20}
               className={isDark ? "text-slate-400" : "text-slate-500"}
             />
-            <span className="hidden sm:inline-block">{productName}</span>
           </div>
 
           {/* Center: Navigation Links */}

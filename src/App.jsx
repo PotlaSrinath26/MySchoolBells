@@ -35,6 +35,8 @@ import AssemblyManagement from "./components/pages/AssemblyManagement";
 import FacultyFlow from "./components/pages/FacultyFlow";
 import SmartRouteManagement from "./components/pages/SmartRouteManagement";
 import ExcellenceGallery from "./components/pages/ExcellenceGallery";
+import Login from "./components/pages/Login";
+import { useAuth } from "./lib/AuthContext";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -82,6 +84,20 @@ export default function App() {
 }
 
 function AppContent() {
+  const { user, isLoading } = useAuth();
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-600"></div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <Login />;
+  }
+
   return (
     <Router>
       <div className="min-h-screen bg-transparent dark:bg-[#020617] transition-colors duration-500 font-sans text-slate-900 dark:text-slate-100 selection:bg-rose-500/30 selection:text-rose-200 pb-32 xl:pb-0">
