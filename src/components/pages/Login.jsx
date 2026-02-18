@@ -44,14 +44,14 @@ export default function Login() {
             <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/10 to-transparent"></div>
 
             <div className="relative z-10 flex flex-col items-center text-white">
-              <div className="p-3 bg-white/20 backdrop-blur-md rounded-2xl mb-2 shadow-inner ring-1 ring-white/30">
-                <ShieldCheck className="w-8 h-8 text-white" />
+              <div className="p-3  rounded-2xl mb-2 shadow-inner ">
+              <img className="w-10 h-18" src="/Images/MySchool/MySchoolBells/Logo.webp" alt="myschoolbells" />
               </div>
               <h1 className="text-2xl font-bold tracking-tight">
-                Welcome Back
+               MY SCHOOL BELLS
               </h1>
               <p className="text-indigo-100 text-sm font-medium">
-                Secure Access Portal
+              Please sign in to access the platform
               </p>
             </div>
           </div>
