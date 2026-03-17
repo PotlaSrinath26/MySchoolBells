@@ -16,7 +16,7 @@ export default function Login() {
 
     // Simulate network delay for better UX
     setTimeout(() => {
-      if (username === "visdomwaves@gmail.com" && password === "1947") {
+      if (username === "visdomwaves@gmail.com" && password === "india@1947") {
         login({ email: username, name: "Admin User", role: "admin" });
       } else {
         setError(
